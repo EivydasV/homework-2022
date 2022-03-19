@@ -11,7 +11,11 @@ export const autoComplete: RequestHandler<
         const { search } = req.query;
 
         const filtered = data
-            .filter((obj) => obj.displayname.includes(search ?? ""))
+            .filter((obj) =>
+                obj.displayname
+                    .toLocaleLowerCase()
+                    .includes(search.toLocaleLowerCase() ?? "")
+            )
             .slice(0, 10);
 
         return res.status(200).json({
