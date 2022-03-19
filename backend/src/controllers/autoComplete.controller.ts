@@ -13,8 +13,8 @@ export const autoComplete: RequestHandler<
         const filtered = data
             .filter((obj) =>
                 obj.displayname
-                    .toLocaleLowerCase()
-                    .includes(search.toLocaleLowerCase() ?? "")
+                    .toLowerCase()
+                    .includes(search.toLowerCase() ?? "")
             )
             .slice(0, 10);
 
