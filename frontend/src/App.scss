@@ -1,0 +1,83 @@
+.container {
+    display: flex;
+    gap: 0.2rem;
+    max-width: 90vw;
+    .search-component {
+        position: relative;
+
+        .fake-input {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: #f0f3f5;
+            border-radius: 0.6rem;
+            padding: 0 1rem;
+            font-size: 1.2rem;
+            cursor: text;
+        }
+
+        .real-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            animation: scaleAnimation forwards 0.1s;
+
+            .input-wrapper {
+                font-size: 1.2rem;
+                position: relative;
+                .icon {
+                    position: absolute;
+                    transform: translateY(-50%);
+                    top: 50%;
+                    left: 1rem;
+                }
+                .search {
+                    border: none;
+                    outline: none;
+                    background-color: white;
+                    box-shadow: 0 0 15px #d0d2d3;
+
+                    padding-left: 3.5rem;
+                    font-size: 1.2rem;
+                    height: 4rem;
+                    // display: block;
+                    width: 100%;
+                    &::placeholder {
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+    .button-wrapper {
+        .submit {
+            background-color: #f88732;
+            cursor: pointer;
+            border: 0;
+            outline: 0;
+            font-size: 1.5rem;
+            display: grid;
+            place-items: center;
+            color: white;
+            border-radius: 0.2rem;
+            height: 100%;
+            padding-inline: 1.2rem;
+            &:hover {
+                background-color: #e47f33;
+            }
+        }
+    }
+}
+@keyframes scaleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
