@@ -1,7 +1,12 @@
 import React, { FC, useRef, useState } from "react";
 import { IoCarSportSharp } from "react-icons/io5";
 import useOnClickOutside from "../hooks/useClickOutside";
-export const SearchInput: FC = () => {
+
+interface ISearchInput {
+    text: string;
+    name: string;
+}
+export const SearchInput: FC<ISearchInput> = ({ text, name }) => {
     const [isInputOpen, setIsInputOpen] = useState(false);
 
     const input = useRef<HTMLDivElement>(null);
@@ -12,7 +17,7 @@ export const SearchInput: FC = () => {
         <div className="search-component">
             <div className="fake-input" onClick={() => setIsInputOpen(true)}>
                 <IoCarSportSharp />
-                <p className="text">From?</p>
+                <p className="text">{text}</p>
             </div>
             {isInputOpen && (
                 <div className="real-input" ref={input}>
@@ -21,9 +26,10 @@ export const SearchInput: FC = () => {
 
                         <input
                             type="text"
-                            placeholder="From?"
+                            placeholder={text}
                             className="search"
                             autoFocus
+                            name={name}
                         />
                     </div>
                 </div>
