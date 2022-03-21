@@ -31,6 +31,14 @@ export const SearchInput: FC<ISearchInput> = ({ text, name }) => {
                             autoFocus
                             name={name}
                         />
+                        <div className="dropdown">
+                            <div className="label">
+                                Cities (including airports)
+                            </div>
+                            <div className="section"></div>
+                            <div className="label">Airports</div>
+                            <div className="section"></div>
+                        </div>
                     </div>
                 </div>
             )}

@@ -18,7 +18,7 @@ export const DropOff: FC<IDropOff> = ({ choice, setChoice }) => {
             <span className="text ">
                 {choice}
                 <IoArrowDownCircleSharp
-                    className={isOpen ? "iconActive" : ""}
+                    className={isOpen ? "iconActive" : "iconInactive"}
                 />
             </span>
             {isOpen && (
