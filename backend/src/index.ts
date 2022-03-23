@@ -1,9 +1,15 @@
 import express from "express";
+import cors from "cors";
 import { autoComplete } from "./controllers/autoComplete.controller";
 
 const app = express();
 const port = 3001;
 
+app.use(
+    cors({
+        origin: "http://localhost:3000",
+    })
+);
 app.get("/", (_req, res) => {
     res.send(
         "<h1>Congratulations 🎉 You got the WCC 2022 backend server running. Good luck with your task 🙌</h1>"

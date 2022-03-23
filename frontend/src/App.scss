@@ -103,11 +103,43 @@
                 border-top: 1px solid rgb(185, 185, 185);
                 font-size: 1rem;
                 box-shadow: 0 15px 15px #d0d2d359;
-                padding: 1rem;
 
                 .label {
                     color: rgb(112, 112, 112);
                     font-weight: 600;
+                    padding: 1rem;
+                }
+                .section {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-inline: 1rem;
+                    &:hover {
+                        background-color: #e9eaeb;
+                        cursor: pointer;
+                    }
+
+                    .icon-text {
+                        margin: 0;
+                        line-height: 5px;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        font-size: 1rem;
+                        .icon-plane {
+                            transform: rotate(-50deg);
+                        }
+
+                        .names {
+                            font-weight: 700;
+                        }
+                        .cities {
+                            color: #424242;
+                        }
+                    }
+                    .code {
+                        font-size: 1.1rem;
+                        color: #4d4d4d;
+                    }
                 }
             }
         }
@@ -166,7 +198,7 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     .flex {
         flex-direction: column;
     }

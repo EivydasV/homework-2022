@@ -14,13 +14,12 @@ export const autoComplete: RequestHandler<
             .filter((obj) =>
                 obj.displayname
                     .toLowerCase()
-                    .includes(search.toLowerCase() ?? "")
+                    .includes(search?.toLowerCase() ?? "")
             )
             .slice(0, 10);
 
         return res.status(200).json({
-            data: filtered,
-            count: filtered.length,
+            records: filtered,
         });
     } catch (e) {
         return res.status(500).json({ message: "something went wrong" });
